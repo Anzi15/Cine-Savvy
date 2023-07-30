@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1b1b1b;
+}
+
+nav {
+  padding: 1rem 0.5rem;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+nav a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+.crousel {
+  margin: 5rem 0;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cards .card {
+  margin: 1vh auto !important;
+  background-color: #222;
+  color: white;
+}
+
+.d-block {
+  border: none;
+  opacity: 0.6;
+}
+
+.carousel-item {
+  background: #1b1b1b;
+  border: none;
+}
+
+.carousel-caption h1 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+@media screen and (max-width: 400px) {
+  .carousel-caption h1 {
+    font-size: 1rem;
+    margin: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+}/*# sourceMappingURL=style.css.map */
