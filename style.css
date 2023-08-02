@@ -42,12 +42,16 @@ nav .links button {
 
 .cards {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
 }
 .cards .card {
   margin: 1vh auto !important;
   background-color: #222;
   color: white;
+}
+
+.cards:last-child {
+  align-self: left;
 }
 
 .d-block {
@@ -102,10 +106,10 @@ body {
     margin: 5vh 0;
   }
 }
-.searchContainer{
+.searchContainer {
   width: 100vw;
   height: 60vh;
-  background: #1b1c1b;
+  background: #1c1c1c;
   display: grid;
   place-items: center;
 }
@@ -165,4 +169,30 @@ body {
 
 .row {
   border: none !important;
+}
+
+.skele-img {
+  aspect-ratio: 371.438/557.156;
+  animation: skeleton 5s ease-in infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: #5a5a5a;
+  }
+  25% {
+    background-color: #4a4a4a;
+  }
+  50% {
+    background-color: #3a3a3a;
+  }
+  75% {
+    background-color: #2a2a2a;
+  }
+  100% {
+    background-color: #5a5a5a;
+  }
+}
+.none {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

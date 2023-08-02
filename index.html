@@ -4,8 +4,9 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <!-- my css -->
+    <!-- my stylings -->
     <link rel="stylesheet" href="style.css">
+    <script defer src="animation.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" >
     <title>Cine-Savvy</title>
@@ -21,10 +22,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link" aria-current="page" >Discover</a>
-          <a class="nav-link">Trending</a>
-          <a class="nav-link">Rated</a>
-          <a class="nav-link">Team</a>
+          <a class="nav-link active" id="link1" onclick="section='disover'; load(); navStatus(link1); ">Discover</a>
+          <a class="nav-link" id="link2" onclick="section ='trending'; load(); navStatus(link2); ">Trending</a>
+          <a class="nav-link" id="link3" onclick="section='popular'; load(); navStatus(link3); ">Popular</a>
+          <a class="nav-link" id="link4" onclick="section='top-rated';load(); navStatus(link4); ">Top-rated</a>
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@
           <div class="search">
             <i class="fa fa-search"></i>
             <input type="text" autocomplete="off" class="form-control dark" onclick="inputClick()" id="search">
-            <button class="btn btn-primary" accesskey="enter" onclick="">Search</button>
+            <button class="btn btn-primary" accesskey="enter" onclick="search()">Search</button>
           </div>
           
         </div>
@@ -49,11 +50,17 @@
       </div>
   </div>
   </div>
+  <br>
+  <h4 id="seachSubHeading"></h4>
+  <hr class="row none" style="display: none;" id="searchRow">
+  <br>
+  <div class="cards" id="seachResults">
+  </div>
 
     <!-- bootstrap cards -->
     
     <br>
-    <h4> Trending Right now </h4>
+    <h4 id="subHeading"></h4>
     <hr class="row">
     <br>
 
