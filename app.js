@@ -48,11 +48,11 @@ let count = 0;
 const speed = 100;
 var txt = [
   'Avengers',
-  'Endgame',
-  'Welcome',
-  'don worry',
-  'so too yes',
-  'your fav..'
+  'Barbie',
+  'Fast x',
+  'Black Adam',
+  'Spiderman',
+  'Puss in the boots'
 ];
 var txtNum = 0;
 let p = txt[txtNum].length+1;

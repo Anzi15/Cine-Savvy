@@ -102,10 +102,10 @@ body {
     margin: 5vh 0;
   }
 }
-.searchContainer {
+.searchContainer{
   width: 100vw;
   height: 60vh;
-  background: #1c1c1c;
+  background: #1b1c1b;
   display: grid;
   place-items: center;
 }
