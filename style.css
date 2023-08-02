@@ -42,7 +42,7 @@ nav .links button {
 
 .cards {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 }
 .cards .card {
   margin: 1vh auto !important;
@@ -101,4 +101,68 @@ body {
     width: 97vw;
     margin: 5vh 0;
   }
+}
+.searchContainer {
+  width: 100vw;
+  height: 60vh;
+  background: #1c1c1c;
+  display: grid;
+  place-items: center;
+}
+.searchContainer .input {
+  display: flex;
+  background-color: white;
+}
+
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+
+.search input {
+  height: 3.6rem;
+  background: #2a2a2a;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4;
+  color: rgb(145, 139, 139) !important;
+}
+.search input::-moz-placeholder {
+  color: white !important;
+}
+.search input::placeholder {
+  color: white !important;
+}
+
+.search input:focus, input:focus {
+  color: white !important;
+  box-shadow: none;
+  background: #2a2a2a;
+  border: 2px solid rgb(31, 31, 255);
+}
+
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+.search .fa-search svg {
+  position: absolute;
+}
+
+.search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 3rem !important;
+  width: 5rem;
+  background: rgb(34, 34, 255);
+  outline: none;
+}
+
+.container {
+  border: none;
+}
+
+.row {
+  border: none !important;
 }/*# sourceMappingURL=style.css.map */
