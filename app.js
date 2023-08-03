@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   section="discover";
   load()
 });
-const pageNum = 6;
+const pageNum = 8;
 function load() {
   for(let t=1; t<pageNum; t++){
     if(section == "discover"){
@@ -31,18 +31,20 @@ function load() {
     }
     if(section == "popular"){
       subHeading.innerHTML = `All-Time Favorites`
-      url = `https://api.themoviedb.org/3/movie/popular?language=en-US&page=${t}`
+      url = `https://api.themoviedb.org/3/movie/popular?include_adult=false&language=en-US&page=${t}`
     }
     if(section=="top-rated"){
       subHeading.innerHTML = `Viewer's choice`
-      url = `https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=${t}`
+      url = `https://api.themoviedb.org/3/movie/top_rated?include_adult=false&language=en-US&page=${t}`
     }
     fetch(url, options)
       .then(response => response.json())
       .then((response) => {
-        // console.log(response)
         for(let i=0; i<response.results.length;i++){
           let newCard = document.createElement('div');
+        if( response.results[i].title == 'Lusty Discipline in Uniform'|| response.results[i].title == 'PAW Patrol: The movie'){
+          return;
+        }else{
           newCard.classList.add('cards')
           newCard.innerHTML=` <button onclick="infoTab(${response.results[i]})" class="card responsive-cards">
           <img draggable="false" src="http://image.tmdb.org/t/p/w500${response.results[i].poster_path}" class="card-img-top skele-img" alt="...">
@@ -52,7 +54,7 @@ function load() {
             </button>`;
             newCard.classList.add('card');
             cardList.append(newCard);
-  
+        }
           }
         }
       )
