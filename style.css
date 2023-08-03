@@ -269,15 +269,15 @@ footer {
 .li {
   list-style: none;
   background-color: transparent;
-  height: 4rem !important;
-  width: 4rem !important;
+  height: 3.5rem !important;
+  width: 3.5rem !important;
   border-radius: 50%;
   border: solid 1px #a3de83;
   display: grid;
   place-items: center;
 }
 .li a svg {
-  height: 2.7rem;
+  height: 2.3rem;
   color: #a3de83 !important;
 }
 
