@@ -69,38 +69,38 @@ function load() {
 
 
 
-// function search(){
-// searchResults.innerHTML=''
-// searchSubHeading.innerHTML = `Search Results`
-// searchRow.classList.remove('none')
-// const inputValue = searched.value;
-// const query = inputValue.replace(/ /g, '%20');
+function search(){
+searchResults.innerHTML=''
+searchSubHeading.innerHTML = `Search Results`
+searchRow.classList.remove('none')
+const inputValue = searched.value;
+const query = inputValue.replace(/ /g, '%20');
 
-// var searhPageNum = 1;
-//   fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${searhPageNum}`, options)
-//   .then(queryResults => queryResults.json())
-//   .then((queryResults) => {
-//     console.log(queryResults);
-//     for(let i=0; i<queryResults.results.length; i++){
-//       if(queryResults.results[i].poster_path !== null){
-//         let newCard = document.createElement('div');
-//         newCard.classList.add('cards')
-//         newCard.innerHTML=`
-//         <button onclick="infoTab(${queryResults.results[i].title,queryResults.results[i].date}))" class="card responsive-cards">
-//         <img draggable="false" src="http://image.tmdb.org/t/p/w500${queryResults.results[i].poster_path}" class="card-img-top skele-img" alt="...">
-//         <div class="card-body">
-//         <h6>${queryResults.results[i].title}</h6>
-//         </div>
-//         </button>`;
-//         newCard.classList.add('card');
-//         searchResults.append(newCard);
-//         if(queryResults.page >searhPageNum && searhPageNum < 6){
-//           searhPageNum++
-//           search()
-//         }
-//       }
-//     }
-//   })
+var searhPageNum = 1;
+  fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${searhPageNum}`, options)
+  .then(queryResults => queryResults.json())
+  .then((queryResults) => {
+    console.log(queryResults);
+    for(let i=0; i<queryResults.results.length; i++){
+      if(queryResults.results[i].poster_path !== null){
+        let newCard = document.createElement('div');
+        newCard.classList.add('cards')
+        newCard.innerHTML=`
+        <button fonclick="infoTab(${queryResults.results[i].id})" class="card responsive-cards">
+        <img draggable="false" src="http://image.tmdb.org/t/p/w500${queryResults.results[i].poster_path}" class="card-img-top skele-img" alt="...">
+        <div class="card-body">
+        <h6>${queryResults.results[i].title}</h6>
+        </div>
+        </button>`;
+        newCard.classList.add('card');
+        searchResults.append(newCard);
+        if(queryResults.page >searhPageNum && searhPageNum < 6){
+          searhPageNum++
+          search()
+        }
+      }
+    }
+  })
   
-// }
+}
 
