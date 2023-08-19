@@ -22,19 +22,23 @@ document.addEventListener('DOMContentLoaded', ()=>{
 const pageNum = 8;
 function load() {
   for(let t=1; t<pageNum; t++){
-    if(section == "discover"){
+    if(sessionStorage.getItem('section') == "discover"){
+      navStatus(link1)
       subHeading.innerHTML = `Personalized Cinema`
       url= `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en-US&page=${t}`
     }
-    if(section =="trending"){
+    if(sessionStorage.getItem('section')  =="trending"){
+      navStatus(link2);
       subHeading.innerHTML = `Hot Picks`
       url = `https://api.themoviedb.org/3/trending/movie/day?include_adult=false&page=${t}`;
     }
-    if(section == "popular"){
+    if(sessionStorage.getItem('section')  == "popular"){
+      navStatus(link3);
       subHeading.innerHTML = `All-Time Favorites`
       url = `https://api.themoviedb.org/3/movie/popular?include_adult=false&language=en-US&page=${t}`
     }
-    if(section=="top-rated"){
+    if(sessionStorage.getItem('section') =="top-rated"){
+      navStatus(link4);
       subHeading.innerHTML = `Viewer's choice`
       url = `https://api.themoviedb.org/3/movie/top_rated?include_adult=false&language=en-US&page=${t}`
     }
@@ -42,11 +46,8 @@ function load() {
       .then(response => response.json())
       .then((response) => {
         const returned = JSON.parse(JSON.stringify(response))
-        // console.warn(returned)
-        console.log(response)
         for(let i=0; i<response.results.length;i++){
           if( response.results[i].title == 'Lusty Discipline in Uniform'|| response.results[i].title == 'PAW Patrol: The movie'){
-            console.log(response.results[i].vote_average)
             return;
           }else{
           let newCard = document.createElement('div');
@@ -80,13 +81,12 @@ var searhPageNum = 1;
   fetch(`https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=${searhPageNum}`, options)
   .then(queryResults => queryResults.json())
   .then((queryResults) => {
-    console.log(queryResults);
     for(let i=0; i<queryResults.results.length; i++){
       if(queryResults.results[i].poster_path !== null){
         let newCard = document.createElement('div');
         newCard.classList.add('cards')
         newCard.innerHTML=`
-        <button fonclick="infoTab(${queryResults.results[i].id})" class="card responsive-cards">
+        <button onclick="infoTab(${queryResults.results[i].id})" class="card responsive-cards">
         <img draggable="false" src="http://image.tmdb.org/t/p/w500${queryResults.results[i].poster_path}" class="card-img-top skele-img" alt="...">
         <div class="card-body">
         <h6>${queryResults.results[i].title}</h6>
@@ -101,6 +101,5 @@ var searhPageNum = 1;
       }
     }
   })
-  
 }
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="https://i.ibb.co/t4gJ1zt/Blue-White-Modern-Simple-Film-Production-Logo.png">
     <!-- ion icons -->
     <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -29,10 +30,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" id="link1" onclick="section='disover'; load(); navStatus(link1); ">Discover</a>
-          <a class="nav-link" id="link2" onclick="section ='trending'; load(); navStatus(link2); ">Trending</a>
-          <a class="nav-link" id="link3" onclick="section='popular'; load(); navStatus(link3); ">Popular</a>
-          <a class="nav-link" id="link4" onclick="section='top-rated';load(); navStatus(link4); ">Top-rated</a>
+          <a class="nav-link active" id="link1" onclick="sessionStorage.setItem('section','discover'); location.reload(); ">Discover</a>
+          <a class="nav-link" id="link2" onclick="sessionStorage.setItem('section','trending'); location.reload();">Trending</a>
+          <a class="nav-link" id="link3" onclick="sessionStorage.setItem('section','popular'); location.reload(); ">Popular</a>
+          <a class="nav-link" id="link4" onclick="sessionStorage.setItem('section','top-rated');location.reload(); ">Top-rated</a>
         </div>
       </div>
     </div>
