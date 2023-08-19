@@ -25,7 +25,7 @@ nav {
   padding: 0.5rem 3rem;
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 900;
 }
 nav a {
   font-size: 1.5rem;
@@ -109,12 +109,6 @@ body {
   width: 18rem;
 }
 
-@media screen and (max-width: 400px) {
-  .responsive-cards {
-    width: 97vw;
-    margin: 5vh 0;
-  }
-}
 .searchContainer {
   width: 100vw;
   height: 60vh;
@@ -206,81 +200,168 @@ body {
     background-color: #5a5a5a;
   }
 }
-.none {
-  display: none;
-}
-
-footer {
-  padding: 7em 0;
-}
-
-.footer-07 {
-  background: #121212;
-}
-
-.footer-07 a {
-  color: #a3de83;
-}
-
-.footer-07 p {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.footer-07 .footer-heading {
-  font-size: 30px;
-  color: #fff;
-  font-weight: 700;
-  margin-bottom: 30px;
-}
-
-.footer-07 .footer-heading .logo {
-  color: #fff;
-}
-
-.footer-07 .menu {
-  margin-bottom: 30px;
-}
-
-.footer-07 .menu a {
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.footer-07 .ftco-footer-social li a {
-  background: transparent;
-}
-
-.ftco-section {
-  padding: 12em 0;
-}
-
-.ftco-section h2 {
-  margin-bottom: 0;
-}
-
-.ul {
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity to control the blur */
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px); /* Adjust the blur amount as needed */
+  z-index: 999; /* Ensure the overlay is on top of other elements */
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1.7rem;
 }
 
-.li {
-  list-style: none;
-  background-color: transparent;
-  height: 3.5rem !important;
-  width: 3.5rem !important;
-  border-radius: 50%;
-  border: solid 1px #a3de83;
+.body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.containerOverlay {
   display: grid;
   place-items: center;
 }
-.li a svg {
-  height: 2.3rem;
-  color: #a3de83 !important;
+
+.cookiesContent {
+  width: 90%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #1b1b1b;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px 30px 70px;
+}
+.cookiesContent::-webkit-scrollbar {
+  display: none;
+}
+.cookiesContent::-webkit-scrollbar-corner {
+  display: none;
+}
+.cookiesContent button.close {
+  width: 30px;
+  font-size: 20px;
+  color: #c0c5cb;
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 10px;
+}
+.cookiesContent img {
+  width: 80% !important;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  aspect-ratio: 247/138.812;
+  animation: skeleton 5s ease-in infinite;
+}
+.cookiesContent h3 {
+  margin-bottom: 40px;
 }
 
-.hyderated {
-  width: 1rem !important;
+.genreIds {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 8rem;
+}
+
+.genres {
+  width: 85%;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll !important;
+  gap: 1rem;
+  height: 5rem !important;
+}
+.genres::-webkit-scrollbar {
+  display: none;
+}
+.genres::-webkit-scrollbar-corner {
+  display: none;
+}
+
+.genre {
+  white-space: nowrap;
+  display: flex;
+  color: whitesmoke;
+  background: #3a3a3a;
+  padding: 0.5rem;
+  border-radius: 20px;
+  border: solid white 1px;
+}
+
+.data {
+  margin: 1rem 0;
+  width: 80%;
+  height: 3rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+#ratingStars {
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.overview {
+  display: flex;
+  align-items: flex-start;
+  width: 80%;
+}
+
+summary {
+  text-align: left;
+}
+
+@media screen and (max-width: 400px) {
+  .overlay {
+    padding: 0;
+    align-items: flex-end !important;
+    height: 100vh;
+    animation: up 2s ease-in-out linear;
+  }
+  .cookiesContent {
+    width: 100vw;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .cookiesContent img {
+    width: 95%;
+  }
+  .cookiesContent h4 {
+    margin-bottom: 1rem;
+  }
+  .genreIds, .data, .overview {
+    width: 90% !important;
+  }
+  .genreIds {
+    height: 8rem !important;
+    flex-direction: column-reverse;
+  }
+  details p {
+    text-align: left;
+  }
+}
+@keyframes up {
+  0% {
+    height: 200vh;
+  }
+  100% {
+    height: 100vh;
+  }
+}
+@media screen and (max-width: 992px) {
+  .genreIds {
+    height: 6rem;
+    flex-direction: column-reverse;
+  }
 }/*# sourceMappingURL=style.css.map */

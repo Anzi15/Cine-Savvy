@@ -1,0 +1,78 @@
+.none {
+  display: none;
+}
+
+footer {
+  padding: 7em 0;
+}
+
+.footer-07 {
+  background: #121212;
+}
+
+.footer-07 a {
+  color: #a3de83;
+}
+
+.footer-07 p {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-07 .footer-heading {
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.footer-07 .footer-heading .logo {
+  color: #fff;
+}
+
+.footer-07 .menu {
+  margin-bottom: 30px;
+}
+
+.footer-07 .menu a {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-07 .ftco-footer-social li a {
+  background: transparent;
+}
+
+.ftco-section {
+  padding: 12em 0;
+}
+
+.ftco-section h2 {
+  margin-bottom: 0;
+}
+
+.ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.7rem;
+}
+
+.li {
+  list-style: none;
+  background-color: transparent;
+  height: 3.5rem !important;
+  width: 3.5rem !important;
+  border-radius: 50%;
+  border: solid 1px #a3de83;
+  display: grid;
+  place-items: center;
+}
+.li a svg {
+  height: 2.3rem;
+  color: #a3de83 !important;
+}
+
+.hyderated {
+  width: 1rem !important;
+}/*# sourceMappingURL=nav.css.map */
