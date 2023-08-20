@@ -93,10 +93,10 @@ function inputClick() {
   document.addEventListener('DOMContentLoaded', typeWriter);
 
   function infoTab(id){
+    overlayActive();
     fetch(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, options)
     .then(response => response.json())
     .then((response) => {
-    console.warn(response)
     infoTitle.innerText = response.title;
     infoImg.src = `http://image.tmdb.org/t/p/w500${response.backdrop_path}`
     infoDate.innerText = response.release_date
@@ -104,7 +104,6 @@ function inputClick() {
     infoOverview.innerText= response.overview;
     loadGenre(response.genres)
     renderStars(response.vote_average);
-    overlayActive();
     })
     .catch(err => console.error(err))
     
@@ -139,10 +138,16 @@ function inputClick() {
     }
 
   function overlayActive(){
-    document.body.classList.add('body')
+    overlay.classList.remove('Ani-down')
     overlay.classList.remove('none')
+    overlay.classList.add('Ani-up')
+    document.body.classList.add('body')
   }
   function overlayDisable(){
-    document.body.classList.remove('body')
-    overlay.classList.add('none')
+    overlay.classList.remove('Ani-up')
+    overlay.classList.add('Ani-down')
+ setTimeout(() => {
+     document.body.classList.remove('body')
+     overlay.classList.add('none')
+ }, 500);
   }

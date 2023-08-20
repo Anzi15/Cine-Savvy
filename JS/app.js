@@ -13,14 +13,15 @@ const options = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NDdjODhmYTBhYWNhMmE5Y2IwMmExMjY0MmFiYmI3YyIsInN1YiI6IjY0ODlmNzAyZDJiMjA5MDBhZDNlZWNkMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sayDQQ9JRZ8G07pDh8EeA_VGP-3SPOqJw7gxQJ489sc'
   }
 };
-var section;
 var url;
-document.addEventListener('DOMContentLoaded', ()=>{
-  section="discover";
+  if(sessionStorage.getItem('section')==undefined){
+    sessionStorage.setItem('section','discover');
+    
+  }
   load()
-});
-const pageNum = 8;
+
 function load() {
+  const pageNum = 8;
   for(let t=1; t<pageNum; t++){
     if(sessionStorage.getItem('section') == "discover"){
       navStatus(link1)
