@@ -138,6 +138,7 @@ function inputClick() {
     }
 
   function overlayActive(){
+    infoImg.src = ''
     overlay.classList.remove('Ani-down')
     overlay.classList.remove('none')
     overlay.classList.add('Ani-up')
